@@ -1,4 +1,4 @@
-let title = "Страница"
+let title = "Главная страница"
 let screens = "main"
 let screenPrice = 500
 let rollback = 400
