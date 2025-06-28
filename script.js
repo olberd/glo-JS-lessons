@@ -1,15 +1,23 @@
+"use strict";
+
 let title = prompt("Как называется ваш проект?")
 let screens = prompt("Какие типы экранов нужно разработать?", "Простые, Сложные, Интерактивные")
-let screenPrice = prompt("Сколько будет стоить данная работа?")
+let screenPrice = +prompt("Сколько будет стоить данная работа?")
 let rollback = 10
-let fullPrice = 7000
-let adaptive = prompt("Нужен ли адаптив на сайте?")
+let adaptive = confirm("Нужен ли адаптив на сайте?")
+let service1 = prompt("Какой дополнительный тип услуги нужен?", "service1")
+let servicePrice1 = +prompt("Сколько это будет стоить?")
+let service2 = prompt("Какой дополнительный тип услуги нужен?", "service2")
+let servicePrice2 = +prompt("Сколько это будет стоить?")
+
+let fullPrice = screenPrice + servicePrice1 + servicePrice2
+let servicePercentPrice = fullPrice - fullPrice*(rollback/100)
 
 console.log(title)
 console.log(screens)
 console.log(fullPrice)
-console.log( adaptive)
+console.log(adaptive)
 console.log(`Стоимость верстки экранов ${screenPrice} рублей`)
 console.log(`Стоимость разработки сайта ${fullPrice} рублей`)
-console.log(screens.toLowerCase().split(", "))
+console.log(servicePercentPrice)
 console.log(fullPrice*(rollback/100))
